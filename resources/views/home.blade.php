@@ -1,128 +1,215 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoinNow - Belajar Coding & Animasi</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            padding: 150px 50px 100px;
-            text-align: center;
-            color: white;
-        }
-
-        .badge {
-            background: rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-        }
-
-        .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            background: #ffd700;
-            color: #333;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    <title>Alhazein Academy Kendari</title>
+    @vite('resources/css/app.css')
 </head>
-<body>
+
+<body class="font-sans">
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <h2>alhazein academy</h2>
-        </div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#kursus">Kursus</a>
-            <a href="#event">Event</a>
-            <a href="#tentang">Tentang Kami</a>
-            <a href="#artikel">Artikel</a>
-            <a href="#dashboard">Dashboard</a>
+    <nav class="fixed inset-x-0 top-0 z-50 bg-white shadow-md">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 md:px-8 lg:px-12">
+            <a href="/">
+                <img src="/image/logo.png" alt="Logo Alhazen Academy" class="h-8 sm:h-10">
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex md:gap-6 lg:gap-8">
+                <a href="#home" class="text-sm text-gray-600 transition hover:text-hijau-500 lg:text-base">Home</a>
+                <a href="#tentang" class="text-sm text-gray-600 transition hover:text-hijau-500 lg:text-base">Tentang Kami</a>
+                <a href="#kelas" class="text-sm text-gray-600 transition hover:text-hijau-500 lg:text-base">Kelas</a>
+            </div>
+
+            <!-- Mobile Menu Button (you can add functionality later) -->
+            <button class="p-2 md:hidden">
+                <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="badge">RELAS RODING GRATIS</div>
-        <h3>Untuk Anak Usia s-17 Tahun</h3>
-        <h1>COINNOW</h1>
-        <h2>Tempat Belajar Coding & Animasi Terbaik #1</h2>
-        <p>Yuk Belajar Coding dan Animasi Bareng<br>dengan metode belajar online, offline</p>
-        <a href="#daftar" class="cta-button">Data</a>
+    <section id="home" class="relative min-h-[100svh] bg-gradient-to-br from-hijau-500 to-hijau-200 pt-12 sm:pt-16 md:pt-20 lg:pt-20">
+        <div class="container mx-auto px-4 py-8 sm:px-6 sm:py-12 md:px-8 lg:px-12">
+            <div class="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
+                <!-- Left Content -->
+                <div class="text-center md:text-left">
+                    <h1 class="mb-4 text-3xl font-bold text-white sm:text-4xl md:mb-6 md:text-5xl lg:text-6xl">
+                        Tempat Belajar Coding & Animasi Terbaik #1
+                    </h1>
+                    <p class="mb-6 text-base text-white opacity-90 sm:text-lg md:mb-8 md:text-xl">
+                        Yuk Belajar Coding dan Animasi Bareng dengan metode belajar online, offline
+                    </p>
+                    <a href="#"
+                        class="inline-block rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-hijau-500 shadow-lg transition hover:bg-yellow-300 hover:text-white sm:px-8 sm:py-3 md:text-base lg:px-10 lg:py-4">
+                        Mulai Belajar
+                    </a>
+                </div>
+
+                <!-- Right Content - Image -->
+                <div class="relative mt-8 md:mt-0">
+                    <div class="relative mx-auto max-w-md overflow-hidden rounded-xl sm:max-w-lg md:max-w-none">
+                        <img src="/image/hero.png" alt="Student Coding" 
+                            class="h-full w-full object-cover object-center"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cloud Divider -->
+        <div class="absolute bottom-0 left-0 right-0 h-16 overflow-hidden sm:h-20 md:h-24">
+            <!-- First cloud layer -->
+            <svg class="absolute bottom-2 left-0 w-full sm:bottom-3 md:bottom-4" 
+                xmlns="http://www.w3.org/2000/svg" version="1.1" height="100"
+                viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path fill="#fff" opacity="0.5" d="M-5 100 Q 0 20 5 100 Z
+                                 M0 100 Q 5 0 10 100
+                                 M5 100 Q 10 30 15 100
+                                 M10 100 Q 15 10 20 100
+                                 M15 100 Q 20 30 25 100
+                                 M20 100 Q 25 -10 30 100
+                                 M25 100 Q 30 10 35 100
+                                 M30 100 Q 35 30 40 100
+                                 M35 100 Q 40 10 45 100
+                                 M40 100 Q 45 50 50 100
+                                 M45 100 Q 50 20 55 100
+                                 M50 100 Q 55 40 60 100
+                                 M55 100 Q 60 60 65 100
+                                 M60 100 Q 65 50 70 100
+                                 M65 100 Q 70 20 75 100
+                                 M70 100 Q 75 45 80 100
+                                 M75 100 Q 80 30 85 100
+                                 M80 100 Q 85 20 90 100
+                                 M85 100 Q 90 50 95 100
+                                 M90 100 Q 95 25 100 100
+                                 M95 100 Q 100 15 105 100 Z">
+                </path>
+            </svg>
+            
+            <!-- Second cloud layer -->
+            <svg class="absolute bottom-0 left-0 w-full" 
+                xmlns="http://www.w3.org/2000/svg" version="1.1" height="100"
+                viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path fill="#fff" d="M-5 100 Q 0 20 5 100 Z
+                                 M0 100 Q 5 0 10 100
+                                 M5 100 Q 10 30 15 100
+                                 M10 100 Q 15 10 20 100
+                                 M15 100 Q 20 30 25 100
+                                 M20 100 Q 25 -10 30 100
+                                 M25 100 Q 30 10 35 100
+                                 M30 100 Q 35 30 40 100
+                                 M35 100 Q 40 10 45 100
+                                 M40 100 Q 45 50 50 100
+                                 M45 100 Q 50 20 55 100
+                                 M50 100 Q 55 40 60 100
+                                 M55 100 Q 60 60 65 100
+                                 M60 100 Q 65 50 70 100
+                                 M65 100 Q 70 20 75 100
+                                 M70 100 Q 75 45 80 100
+                                 M75 100 Q 80 30 85 100
+                                 M80 100 Q 85 20 90 100
+                                 M85 100 Q 90 50 95 100
+                                 M90 100 Q 95 25 100 100
+                                 M95 100 Q 100 15 105 100 Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="tentang" class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Why Alzen</h2>
+            </div>
+
+            <!-- Grid Container -->
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
+                    <p class="text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
+                    <p class="text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
+                    <p class="text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
+                    <p class="text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
+                    <p class="text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
+                    <p class="text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 </html>
