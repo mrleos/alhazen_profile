@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/app.js"></script>
     <title>Alhazein Academy Kendari</title>
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans">
@@ -19,7 +20,8 @@
             <!-- Navigation Links -->
             <div class="hidden md:flex md:gap-6 lg:gap-8">
                 <a href="#home" class="text-sm text-gray-600 transition hover:text-hijau-500 lg:text-base">Home</a>
-                <a href="#tentang" class="text-sm text-gray-600 transition hover:text-hijau-500 lg:text-base">Tentang Kami</a>
+                <a href="#tentang" class="text-sm text-gray-600 transition hover:text-hijau-500 lg:text-base">Tentang
+                    Kami</a>
                 <a href="#kelas" class="text-sm text-gray-600 transition hover:text-hijau-500 lg:text-base">Kelas</a>
             </div>
 
@@ -33,7 +35,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-[100svh] bg-gradient-to-br from-hijau-500 to-hijau-200 pt-12 sm:pt-16 md:pt-20 lg:pt-20">
+    <section id="home"
+        class="relative min-h-[100svh] bg-gradient-to-br from-primary to-hijau-200 pt-12 sm:pt-16 md:pt-20 lg:pt-20">
         <div class="container mx-auto px-4 py-8 sm:px-6 sm:py-12 md:px-8 lg:px-12">
             <div class="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
                 <!-- Left Content -->
@@ -53,8 +56,7 @@
                 <!-- Right Content - Image -->
                 <div class="relative mt-8 md:mt-0">
                     <div class="relative mx-auto max-w-md overflow-hidden rounded-xl sm:max-w-lg md:max-w-none">
-                        <img src="/image/hero.png" alt="Student Coding" 
-                            class="h-full w-full object-cover object-center"
+                        <img src="/image/hero.png" alt="Student Coding" class="h-full w-full object-cover object-center"
                             loading="lazy">
                     </div>
                 </div>
@@ -64,9 +66,8 @@
         <!-- Cloud Divider -->
         <div class="absolute bottom-0 left-0 right-0 h-16 overflow-hidden sm:h-20 md:h-24">
             <!-- First cloud layer -->
-            <svg class="absolute bottom-2 left-0 w-full sm:bottom-3 md:bottom-4" 
-                xmlns="http://www.w3.org/2000/svg" version="1.1" height="100"
-                viewBox="0 0 100 100" preserveAspectRatio="none">
+            <svg class="absolute bottom-2 left-0 w-full sm:bottom-3 md:bottom-4" xmlns="http://www.w3.org/2000/svg"
+                version="1.1" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path fill="#fff" opacity="0.5" d="M-5 100 Q 0 20 5 100 Z
                                  M0 100 Q 5 0 10 100
                                  M5 100 Q 10 30 15 100
@@ -90,10 +91,9 @@
                                  M95 100 Q 100 15 105 100 Z">
                 </path>
             </svg>
-            
+
             <!-- Second cloud layer -->
-            <svg class="absolute bottom-0 left-0 w-full" 
-                xmlns="http://www.w3.org/2000/svg" version="1.1" height="100"
+            <svg class="absolute bottom-0 left-0 w-full" xmlns="http://www.w3.org/2000/svg" version="1.1" height="100"
                 viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path fill="#fff" d="M-5 100 Q 0 20 5 100 Z
                                  M0 100 Q 5 0 10 100
@@ -122,94 +122,269 @@
     </section>
 
     <!-- Tentang Kami Section -->
-    <section id="tentang" class="bg-white py-16 md:py-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="tentang" class="relative bg-white py-16 md:py-24 overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 z-0">
+            <!-- Top-left orange circle -->
+            <div class="absolute -left-16 -top-30 w-64 h-64 bg-orange-100/50 rounded-full animate-pulse-slow"></div>
+
+            <!-- Top-right square -->
+            <div class="absolute top-20 right-20 w-8 h-8 border-2 border-orange-300 animate-spin-slow"></div>
+
+            <!-- Small circles pattern -->
+            <div class="absolute top-32 right-32 w-40 h-40 animate-float"
+                style="background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px); background-size: 10px 10px;">
+            </div>
+
+            <!-- Bottom-left square -->
+            <div class="absolute bottom-40 left-20 w-6 h-6 border-2 border-emerald-300 animate-float-reverse"></div>
+
+            <!-- Bottom-right circle -->
+            <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-emerald-50/30 rounded-full animate-pulse-slow"></div>
+
+            <!-- Small floating elements -->
+            <div class="absolute top-1/4 left-1/3 w-4 h-4 bg-blue-200/50 rounded-full animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/3 w-4 h-4 bg-yellow-200/50 rounded-full animate-float-reverse">
+            </div>
+
+            <!-- Additional floating elements -->
+            <div class="absolute top-1/3 right-1/4 w-3 h-3 border border-purple-300 animate-spin-slow"></div>
+            <div class="absolute bottom-1/3 left-1/4 w-3 h-3 bg-pink-200/50 rounded-full animate-float"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Section Header -->
+            <div class="mb-3 text-center text-primary">
+                <h3 class>OUR UNIQE APPROACH</h3>
+            </div>
             <div class="mb-12 text-center">
-                <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Why Alzen</h2>
+                <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Kenapa Pilih Alzen Academy?</h2>
             </div>
 
             <!-- Grid Container -->
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Card 1 -->
-                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                <div
+                    class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl backdrop-blur-sm bg-white/50">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                     </div>
                     <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
                     <p class="text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus
+                        vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                <div
+                    class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl backdrop-blur-sm bg-white/50">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                     </div>
                     <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
                     <p class="text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus
+                        vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <div
+                    class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl backdrop-blur-sm bg-white/50">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                     </div>
                     <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
                     <p class="text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus
+                        vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
                     </p>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                <div
+                    class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl backdrop-blur-sm bg-white/50">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                     </div>
                     <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
                     <p class="text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus
+                        vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
                     </p>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                <div
+                    class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl backdrop-blur-sm bg-white/50">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                     </div>
                     <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
                     <p class="text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus
+                        vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
                     </p>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-hijau-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                <div
+                    class="rounded-lg bg-white p-6 shadow-lg transition duration-300 hover:shadow-xl backdrop-blur-sm bg-white/50">
+                    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                     </div>
                     <h3 class="mb-3 text-xl font-semibold text-gray-900">Sub judul</h3>
                     <p class="text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi libero, porttitor et maximus
+                        vehicula, pretium at purus. Aenean pellentesque dui sit amet est viverra.
                     </p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Pilihan Kelas Section -->
+    <section id="kelas" class="bg-secondary py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="mb-2 text-center text-primary">
+                <h3 class>OUR CLASS</h3>
+            </div>
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Pilih Kelas Yang Cocok Untukmu
+                </h2>
+            </div>
+
+            <!-- Grid Container -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3">
+                <!-- Kelas 1 -->
+                <div class="group max-w-xs mx-auto">
+                    <div
+                        class="relative rounded-2xl overflow-hidden bg-white shadow-lg transition duration-300 hover:shadow-xl">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-hijau-500 to-yellow-500">
+                        </div>
+
+                        <div class="p-6 text-center">
+                            <div class="mb-4 flex justify-center">
+                                <div class="p-4 bg-purple-50 rounded-full">
+                                    <img src="" alt="kelas 1">
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                                Sub Judul
+                            </h3>
+
+                            <p class="text-gray-600 mb-4 text-sm">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam deleniti beatae
+                                nesciunt in! Accusantium repudiandae libero beatae provident, quod aut cumque
+                                exercitationem aliquam cupiditate est in? Vitae ratione doloremque minus.
+                            </p>
+
+                            <button class="mt-6 w-full bg-hijau-600 text-white py-3 rounded-xl 
+                            transition duration-300 
+                            hover:bg-hijau-700 
+                            focus:outline-none focus:ring-2 focus:ring-hijau-500 focus:ring-offset-2">
+                                Pilih Kelas
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kelas 2 -->
+                <div class="group max-w-xs mx-auto">
+                    <div
+                        class="relative rounded-2xl overflow-hidden bg-white shadow-lg transition duration-300 hover:shadow-xl">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-hijau-500 to-yellow-500">
+                        </div>
+
+                        <div class="p-6 text-center">
+                            <div class="mb-4 flex justify-center">
+                                <div class="p-4 bg-purple-50 rounded-full">
+                                    <img src="" alt="kelas 2">
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                                Sub Judul
+                            </h3>
+
+                            <p class="text-gray-600 mb-4 text-sm">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde ipsam expedita
+                                exercitationem ex laborum quo accusamus voluptatum laudantium aliquid maxime
+                                perspiciatis delectus totam, illo necessitatibus fuga quas animi, quis quos! </p>
+
+                            <button class="mt-6 w-full bg-hijau-600 text-white py-3 rounded-xl 
+                            transition duration-300 
+                            hover:bg-hijau-700 
+                            focus:outline-none focus:ring-2 focus:ring-hijau-500 focus:ring-offset-2">
+                                Pilih Kelas
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kelas 3 -->
+                <div class="group max-w-xs mx-auto">
+                    <div
+                        class="relative rounded-2xl overflow-hidden bg-white shadow-lg transition duration-300 hover:shadow-xl">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-hijau-500 to-yellow-500">
+                        </div>
+
+                        <div class="p-6 text-center">
+                            <div class="mb-4 flex justify-center">
+                                <div class="p-4 bg-purple-50 rounded-full">
+                                    <img src="" alt="kelas 3">
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                                Sub Judul
+                            </h3>
+
+                            <p class="text-gray-600 mb-4 text-sm">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, pariatur.
+                                Exercitationem cum fugiat reiciendis non blanditiis error temporibus nesciunt officia
+                                tenetur rem iure, quo vitae, aliquid unde ex cupiditate mollitia? </p>
+
+                            <button class="mt-6 w-full bg-hijau-600 text-white py-3 rounded-xl 
+                            transition duration-300 
+                            hover:bg-hijau-700 
+                            focus:outline-none focus:ring-2 focus:ring-hijau-500 focus:ring-offset-2">
+                                Pilih Kelas
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
+
 </html>
