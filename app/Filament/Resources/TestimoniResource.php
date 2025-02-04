@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TutorResource\Pages;
-use App\Filament\Resources\TutorResource\RelationManagers;
-use App\Models\Tutor;
+use App\Filament\Resources\TestimoniResource\Pages;
+use App\Filament\Resources\TestimoniResource\RelationManagers;
+use App\Models\Testimoni;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,11 +13,11 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class TutorResource extends Resource
+class TestimoniResource extends Resource
 {
-    protected static ?string $model = Tutor::class;
-    protected static ?string $navigationGroup = 'UI';
-    // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $model = Testimoni::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
@@ -26,19 +26,14 @@ class TutorResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('position')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Repeater::make('experience')
-                    ->schema([
-                        Forms\Components\TextInput::make('exprerience')->required()
-                    ])
-                    ->addActionLabel('Add Experience')
+                Forms\Components\Textarea::make('testimoni')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required(),
+                Forms\Components\TextInput::make('rating')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\FileUpload::make('image_profile')
+                    ->image(),
             ]);
     }
 
@@ -48,10 +43,10 @@ class TutorResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('position')
-                    ->searchable(),
-                    Tables\Columns\TextColumn::make('experience'),
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('rating')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\ImageColumn::make('image_profile'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -84,9 +79,9 @@ class TutorResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTutors::route('/'),
-            'create' => Pages\CreateTutor::route('/create'),
-            'edit' => Pages\EditTutor::route('/{record}/edit'),
+            'index' => Pages\ListTestimonis::route('/'),
+            'create' => Pages\CreateTestimoni::route('/create'),
+            'edit' => Pages\EditTestimoni::route('/{record}/edit'),
         ];
     }
 }

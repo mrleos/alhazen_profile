@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TutorResource\Pages;
-use App\Filament\Resources\TutorResource\RelationManagers;
-use App\Models\Tutor;
+use App\Filament\Resources\GaleryResource\Pages;
+use App\Filament\Resources\GaleryResource\RelationManagers;
+use App\Models\Galery;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,29 +13,17 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class TutorResource extends Resource
+class GaleryResource extends Resource
 {
-    protected static ?string $model = Tutor::class;
+    protected static ?string $model = Galery::class;
+
     protected static ?string $navigationGroup = 'UI';
-    // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('position')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Repeater::make('experience')
-                    ->schema([
-                        Forms\Components\TextInput::make('exprerience')->required()
-                    ])
-                    ->addActionLabel('Add Experience')
-                    ->required()
-                    ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
@@ -46,11 +34,6 @@ class TutorResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('position')
-                    ->searchable(),
-                    Tables\Columns\TextColumn::make('experience'),
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -84,9 +67,9 @@ class TutorResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTutors::route('/'),
-            'create' => Pages\CreateTutor::route('/create'),
-            'edit' => Pages\EditTutor::route('/{record}/edit'),
+            'index' => Pages\ListGaleries::route('/'),
+            'create' => Pages\CreateGalery::route('/create'),
+            'edit' => Pages\EditGalery::route('/{record}/edit'),
         ];
     }
 }
