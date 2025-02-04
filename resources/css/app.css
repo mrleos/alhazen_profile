@@ -1,3 +1,65 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+} 
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+} 
+@keyframes float-reverse {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(20px) rotate(-5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+} @keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 
+@keyframes pulse-slow {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}  .animate-float {
+    animation: float 6s ease-in-out infinite;
+} .animate-float-reverse {
+    animation: float-reverse 7s ease-in-out infinite;
+} .animate-spin-slow {
+    animation: spin-slow 15s linear infinite;
+}  .animate-pulse-slow {
+    animation: pulse-slow 5s ease-in-out infinite;
+} 
