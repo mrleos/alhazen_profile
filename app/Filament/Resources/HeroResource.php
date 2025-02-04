@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Storage;
 class HeroResource extends Resource
 {
     protected static ?string $model = Hero::class;
+    protected static ?string $navigationGroup = 'UI';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    // protected static ?string $navigationIcon = 'heroicon-m-tv';
 
     public static function form(Form $form): Form
     {
@@ -96,5 +97,5 @@ class HeroResource extends Resource
     // {
     //     return false; // Nonaktifkan fitur create
     // }
-    
+
 }
