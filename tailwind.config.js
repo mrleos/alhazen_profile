@@ -14,14 +14,8 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-<<<<<<< HEAD
-                'primary': '#3B82F6',
-                'secondary': '#F59E0B',
-
-=======
                 primary: '#13A570',
                 secondary: '#F5F5F5',
->>>>>>> 25fbcf1ae0bd6903cc15e3747d6e962a83156786
                 hijau: {
                     50: '#f0fdf4',
                     100: '#dcfce7',
@@ -35,10 +29,6 @@ export default {
                     900: '#14532d',
                 }
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> 25fbcf1ae0bd6903cc15e3747d6e962a83156786
         },
     },
     plugins: [],
