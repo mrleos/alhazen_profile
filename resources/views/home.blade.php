@@ -385,6 +385,21 @@
         </div>
     </section>
 
+    <!-- Galery Section -->
+     <section id="galery" class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="mb-2 text-center text-primary">
+                <h3 class>OUR GALLERY
+            </div>
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Galeri pembelajaran alhazen Academy</h2>
+            </div>
+
+     </section>
+
+    <!-- Footer -->
+     
 </body>
 
 </html>
