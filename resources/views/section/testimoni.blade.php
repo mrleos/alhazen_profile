@@ -1,4 +1,4 @@
-<section class="bg-white py-16">
+<section class="bg-white py-16 md:py-24">
     <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="mb-12 text-center">
