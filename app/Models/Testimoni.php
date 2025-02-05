@@ -9,7 +9,7 @@ class Testimoni extends Model
 {
     use HasFactory;
     protected $table = 'testimoni';
-    protected $fillable = ['name', 'testimoni', 'rating', 'image_profile'];
+    protected $fillable = ['name', 'description', 'rating', 'image_profile'];
     protected $casts = [
         'rating' => 'integer',
     ];

@@ -46,6 +46,10 @@
         </div>
       </div>
 
+      @empty($tutor)
+        <h1>Masih kosong kocag</h1>    
+      @endempty
+
       @endforeach
       <!-- Right Arrow -->
       <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md hover:bg-gray-200" id="nextTutor">
