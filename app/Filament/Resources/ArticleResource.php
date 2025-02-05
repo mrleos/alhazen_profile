@@ -18,7 +18,7 @@ class ArticleResource extends Resource
 {
     protected static ?string $model = Article::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
     public static function form(Form $form): Form
     {
@@ -41,8 +41,24 @@ class ArticleResource extends Resource
                         }
                     }),
                 Forms\Components\RichEditor::make('content')
-                    ->required(),
-                Forms\Components\DateTimePicker::make('published_at')
+                    ->toolbarButtons([
+                        // 'attachFiles',
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'h1',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
+                    ])
+                    ->columnSpanFull()
                     ->required(),
             ]);
     }
@@ -56,9 +72,8 @@ class ArticleResource extends Resource
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('author')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('published_at')
-                    ->dateTime()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('content')
+                    ->words(15),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

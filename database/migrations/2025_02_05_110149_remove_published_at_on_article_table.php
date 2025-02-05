@@ -11,20 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('testimoni', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->integer('rating');
-            $table->timestamps();
+        Schema::table('articles', function (Blueprint $table) {
+            $table->dropColumn('published_at');
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        //
-        Schema::dropIfExists('testimoni');
+        Schema::table('articles', function (Blueprint $table) {
+            //
+        });
     }
 };
