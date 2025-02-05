@@ -8,7 +8,7 @@
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Judul Artikel Pertama</h3>
                     <p class="text-gray-600 mt-2">Ringkasan singkat dari artikel ini untuk menarik perhatian pembaca.</p>
-                    <a href="#" class="mt-4 inline-block text-dark-teal font-semibold hover:underline">Baca Selengkapnya</a>
+                    <a href="/article" class="mt-4 inline-block text-dark-teal font-semibold hover:underline">Baca Selengkapnya</a>
                 </div>
             </div>
             <!-- Artikel 2 -->
@@ -17,7 +17,7 @@
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Judul Artikel Kedua</h3>
                     <p class="text-gray-600 mt-2">Ringkasan singkat dari artikel ini untuk menarik perhatian pembaca.</p>
-                    <a href="#" class="mt-4 inline-block text-dark-teal font-semibold hover:underline">Baca Selengkapnya</a>
+                    <a href="/article" class="mt-4 inline-block text-dark-teal font-semibold hover:underline">Baca Selengkapnya</a>
                 </div>
             </div>
             <!-- Artikel 3 -->
@@ -26,7 +26,7 @@
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Judul Artikel Ketiga</h3>
                     <p class="text-gray-600 mt-2">Ringkasan singkat dari artikel ini untuk menarik perhatian pembaca.</p>
-                    <a href="#" class="mt-4 inline-block text-dark-teal font-semibold hover:underline">Baca Selengkapnya</a>
+                    <a href="/article" class="mt-4 inline-block text-dark-teal font-semibold hover:underline">Baca Selengkapnya</a>
                 </div>
             </div>
         </div>
