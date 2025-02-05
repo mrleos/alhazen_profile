@@ -40,14 +40,15 @@
     <section id="home"
         class="relative min-h-[100svh] bg-gradient-to-br from-primary to-hijau-200 pt-12 sm:pt-16 md:pt-20 lg:pt-20">
         <div class="container mx-auto px-4 py-8 sm:px-6 sm:py-12 md:px-8 lg:px-12">
+            @foreach ($hero as $item)
             <div class="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
                 <!-- Left Content -->
                 <div class="text-center md:text-left">
                     <h1 class="mb-4 text-3xl font-bold text-white sm:text-4xl md:mb-6 md:text-5xl lg:text-6xl">
-                        Tempat Belajar Coding & Animasi Terbaik #1
+                        {{ $item->title }}
                     </h1>
                     <p class="mb-6 text-base text-white opacity-90 sm:text-lg md:mb-8 md:text-xl">
-                        Yuk Belajar Coding dan Animasi Bareng dengan metode belajar online, offline
+                        {{ $item->content }}
                     </p>
                     <a href="#"
                         class="inline-block rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-hijau-500 shadow-lg transition hover:bg-yellow-300 hover:text-white sm:px-8 sm:py-3 md:text-base lg:px-10 lg:py-4">
@@ -58,10 +59,12 @@
                 <!-- Right Content - Image -->
                 <div class="relative mt-8 md:mt-0">
                     <div class="relative mx-auto max-w-md overflow-hidden rounded-xl sm:max-w-lg md:max-w-none">
-                        <img src="/image/hero.png" alt="Student Coding" class="h-full w-full object-cover object-center"
+                        <img src="{{ asset('storage/' .$item->image) }}" alt="Student Coding" class="h-full w-full object-cover object-center"
                             loading="lazy">
                     </div>
                 </div>
+                @endforeach
+
             </div>
         </div>
 
@@ -404,14 +407,15 @@
     <footer class="bg-primary text-white pt-16 pb-8 mt-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                @foreach ($footer as $item)
+                    
                 <!-- Logo dan Deskripsi -->
                 <div class="md:col-span-2">
                     <a href="/" class="mb-6 inline-block">
                         <img src="/image/logo2.png" alt="Logo Alhazen Academy" class="h-12">
                     </a>
                     <p class="text-sm opacity-90 leading-relaxed">
-                        Alhazen Academy adalah lembaga kursus coding & animasi terkemuka di Kendari yang berkomitmen
-                        memberikan pendidikan teknologi berkualitas dengan metode pembelajaran modern.
+                        {{ $item->description }}
                     </p>
                 </div>
 
@@ -427,21 +431,21 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Jl. Pendidikan No. 123<br>Kendari, Sulawesi Tenggara
+                            {{ $item->address }}
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
-                            info@alhazen.ac.id
+                            {{ $item->email }}
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
-                            (0401) 123 4567
+                            {{ $item->phone }}
                         </li>
                     </ul>
                 </div>
@@ -451,7 +455,7 @@
                     <h3 class="text-lg font-semibold mb-6">Follow Kami</h3>
                     <div class="flex space-x-4">
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/alhazenacademy/" target="_blank"
+                        <a href="{{ $item->instagram }}" target="_blank"
                             class="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -460,7 +464,7 @@
                         </a>
 
                         <!-- Facebook -->
-                        <a href="https://www.facebook.com/alhazenacademy/" target="_blank"
+                        <a href="{{ $item->facebook }}" target="_blank"
                             class="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -469,7 +473,7 @@
                         </a>
 
                         <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/company/alhazen-academy" target="_blank"
+                        <a href="{{ $item->linkedin }}" target="_blank"
                             class="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -478,7 +482,7 @@
                         </a>
 
                         <!-- YouTube -->
-                        <a href="https://www.youtube.com/@alhazenacademy/videos" target="_blank"
+                        <a href="{{ $item->youtube }}" target="_blank"
                             class="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -487,6 +491,8 @@
                         </a>
                     </div>
                 </div>
+
+                @endforeach
             </div>
 
             <!-- Copyright -->
