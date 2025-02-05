@@ -6,6 +6,8 @@ html {
     scroll-behavior: smooth;
 }
 
+
+/* About Section*/
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -69,3 +71,24 @@ html {
     animation: pulse-slow 5s ease-in-out infinite;
 }
 
+
+/* tutor section */
+.tutor-carousel {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tutor-card {
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+@media (max-width: 768px) {
+    .tutor-card {
+        padding: 4px;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
