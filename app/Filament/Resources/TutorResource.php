@@ -31,7 +31,7 @@ class TutorResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Repeater::make('experience')
                     ->schema([
-                        Forms\Components\TextInput::make('exprerience')->required()
+                        Forms\Components\TextInput::make('experience')->required()
                     ])
                     ->addActionLabel('Add Experience')
                     ->required()

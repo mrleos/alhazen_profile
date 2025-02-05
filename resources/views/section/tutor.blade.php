@@ -9,18 +9,21 @@
         </svg>
       </button>
       <!-- Tutor Card -->
+      @foreach ($tutors as $tutor)
+          
       <div class="tutor-card  p-8 mx-auto max-w-5xl flex items-center">
         <div class="tutor-image flex-shrink-0 mr-12">
           <img
-            src="/path/to/tutor-image.jpg"
-            alt="Reza Malik"
+            src="{{ asset('storage/'. $tutor->image) }}"
+            alt="{{ $tutor->name }}"
             class="rounded-2xl w-56 h-56 border-4 border-accent object-cover"
           />
         </div>
         <div class="tutor-info text-left">
-          <h3 class="text-3xl font-semibold">Reza Malik</h3>
-          <p class="text-xl text-gray-600">Alhazen Academy Lead Tutor</p>
+          <h3 class="text-3xl font-semibold">{{ $tutor->name }}</h3>
+          <p class="text-xl text-gray-600">{{ $tutor->position }}</p>
           <ul class="mt-6 space-y-3">
+            @foreach ($tutor->experience as $exp)
             <li class="flex items-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,45 +39,14 @@
                   d="M4.5 12.75l6 6 9-13.5"
                 />
               </svg>
-              Asesor Rekayasa Perangkat Lunak
-            </li>
-            <li class="flex items-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 text-green-500 mr-3"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4.5 12.75l6 6 9-13.5"
-                />
-              </svg>
-              Ex Backend Developer Magento-based Ecommerce Website
-            </li>
-            <li class="flex items-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 text-green-500 mr-3"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4.5 12.75l6 6 9-13.5"
-                />
-              </svg>
-              Coding Tutor sejak 2016
-            </li>
+              {{ $exp['experience'] }}
+            </li>          
+            @endforeach
           </ul>
         </div>
       </div>
+
+      @endforeach
       <!-- Right Arrow -->
       <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md hover:bg-gray-200" id="nextTutor">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-accent">
