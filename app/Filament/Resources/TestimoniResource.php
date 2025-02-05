@@ -18,7 +18,7 @@ class TestimoniResource extends Resource
 {
     protected static ?string $model = Testimoni::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-star';
 
     public static function form(Form $form): Form
     {
@@ -27,11 +27,14 @@ class TestimoniResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('testimoni')
+                Forms\Components\Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('rating')
-                    ->required()
+                    ->required()    
+                    ->minValue(1)
+                    ->maxValue(5)
+                    ->default(5)
                     ->numeric(),
                 Forms\Components\FileUpload::make('image_profile')
                     ->image()
@@ -51,6 +54,8 @@ class TestimoniResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('description')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('rating')
                     ->numeric()
