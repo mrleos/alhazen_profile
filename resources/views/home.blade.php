@@ -23,8 +23,8 @@
                 <a href="#tentang" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Tentang
                     Kami</a>
                 <a href="#kelas" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Kelas</a>
-                <a href="#galery" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Galeri</a>
-                <a href="#testimoni" class="text-sm text-gray-600 transition hover:text-primary l"></a>
+                <a href="#gallery" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Galeri</a>
+                <a href="#testimoni" class="text-sm text-gray-600 transition hover:text-primary l">testimoni </a>
             </div>
 
             <!-- Mobile Menu Button (you can add functionality later) -->
@@ -131,11 +131,17 @@
     <!-- Galery Section -->
     @include('section.galery')
 
+    <!-- tutor section -->
+    @include('section.tutor')
+
     <!-- Testimonial Section -->
     @include('section.testimoni')
 
+    <!-- Blog Section -->
+    @include('section.blog')
+
     <!-- Footer -->
-    <footer class="bg-dark-teal text-white pt-16 pb-8 mt-24">
+    <footer class="bg-dark-teal text-white pt-16 pb-8 ">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Logo dan Deskripsi -->
