@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Galery extends Model
 {
     protected $table = 'galeri_sections';
-    protected $fillable = ['image'];
+    protected $fillable = ['image', 'title', 'description'];
 }
