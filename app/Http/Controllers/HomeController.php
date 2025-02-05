@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Footer;
+use App\Models\Galery;
 use App\Models\Hero;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $galleries = Galery::latest()->get();
         $footer = Footer::first()->get();
         $hero = Hero::first()->get();
-        return view('home', compact('hero', 'footer'));
+        return view('home', compact('hero', 'footer', 'galleries'));
     }
 
     /**
