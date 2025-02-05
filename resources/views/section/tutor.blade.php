@@ -63,14 +63,6 @@
         </div>
       </div>
 
-<<<<<<< HEAD
-=======
-      @empty($tutor)
-        <h1>Masih kosong kocag</h1>    
-      @endempty
-
-      @endforeach
->>>>>>> 5ae05481792f324d260f65a53b2bec2aa0855ba6
       <!-- Right Arrow -->
       <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-primary" id="nextTutor">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-primary">
@@ -80,6 +72,3 @@
     </div>
   </div>
 </section>
-
-
-
