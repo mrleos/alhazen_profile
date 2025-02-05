@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class TutorResource extends Resource
 {
@@ -30,13 +31,20 @@ class TutorResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Repeater::make('experience')
                     ->schema([
-                        Forms\Components\TextInput::make('exprerience')->required()
+                        Forms\Components\TextInput::make('experience')->required()
                     ])
                     ->addActionLabel('Add Experience')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
+                    ->imageEditor()
+                    ->disk('public')
+                    ->deleteUploadedFileUsing(function ($file, $record) {
+                        if ($record && $record->image) {
+                            Storage::disk('public')->delete($record->image);
+                        }
+                    })
                     ->required(),
             ]);
     }
@@ -49,7 +57,7 @@ class TutorResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('position')
                     ->searchable(),
-                    Tables\Columns\TextColumn::make('experience'),
+                Tables\Columns\TextColumn::make('experience'),
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
