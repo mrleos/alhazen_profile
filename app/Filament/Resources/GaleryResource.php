@@ -27,6 +27,8 @@ class GaleryResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
+                Forms\Components\TextInput::make('title')->required(),
+                Forms\Components\TextInput::make('description')->required(),
             ]);
     }
 
@@ -43,6 +45,8 @@ class GaleryResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('description'),
             ])
             ->filters([
                 //
