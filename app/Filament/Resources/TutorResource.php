@@ -12,12 +12,12 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class TutorResource extends Resource
 {
     protected static ?string $model = Tutor::class;
-    protected static ?string $navigationGroup = 'UI';
-    // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
@@ -38,6 +38,13 @@ class TutorResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
+                    ->imageEditor()
+                    ->disk('public')
+                    ->deleteUploadedFileUsing(function ($file, $record) {
+                        if ($record && $record->image) {
+                            Storage::disk('public')->delete($record->image);
+                        }
+                    })
                     ->required(),
             ]);
     }
@@ -50,7 +57,7 @@ class TutorResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('position')
                     ->searchable(),
-                    Tables\Columns\TextColumn::make('experience'),
+                Tables\Columns\TextColumn::make('experience'),
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
