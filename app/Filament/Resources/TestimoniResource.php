@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class TestimoniResource extends Resource
 {
@@ -36,7 +37,15 @@ class TestimoniResource extends Resource
                     ->default(5)
                     ->numeric(),
                 Forms\Components\FileUpload::make('image_profile')
-                    ->image(),
+                    ->image()
+                    ->required()
+                    ->imageEditor()
+                    ->disk('public')
+                    ->deleteUploadedFileUsing(function ($file, $record) {
+                        if ($record && $record->image) {
+                            Storage::disk('public')->delete($record->image);
+                        }
+                    }),
             ]);
     }
 

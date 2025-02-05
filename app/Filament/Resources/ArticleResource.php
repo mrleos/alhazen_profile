@@ -41,6 +41,24 @@ class ArticleResource extends Resource
                         }
                     }),
                 Forms\Components\RichEditor::make('content')
+                    ->toolbarButtons([
+                        // 'attachFiles',
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'h1',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
+                    ])
+                    ->columnSpanFull()
                     ->required(),
                 Forms\Components\DateTimePicker::make('published_at')
                     ->required(),
