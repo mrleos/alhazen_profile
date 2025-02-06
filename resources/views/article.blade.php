@@ -24,7 +24,7 @@
                 <a href="/Home#kelas" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Kelas</a>
                 <a href="/Home#gallery"
                     class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Galeri</a>
-                <a href="/Home#testimoni" class="text-sm text-gray-600 transition hover:text-primary l">testimoni </a>
+                <a href="/Home#testimoni" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Testimoni </a>
             </div>
 
             <!-- Mobile Menu Button (you can add functionality later) -->
@@ -37,94 +37,49 @@
     </nav>
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto mt-10 px-4 py-8">
+        @foreach ($article as $item)
         <!-- Article Header -->
         <div class="mb-8">
             <h1 class="text-3xl font-bold text-gray-900 mb-4">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem iusto cum praesentium velit sequi
-                fugit nihil eum ipsum mollitia quisquam magnam libero error, eius optio soluta quaerat qui totam
-                deleniti? </h1>
+                {{ $item->title }}
+            </h1>
 
             <!-- Author and Date -->
             <div class="flex items-center space-x-4 mb-6">
                 <img src="https://placehold.co/50x50" alt="Author" class="w-12 h-12 rounded-full">
                 <div>
-                    <div class="font-medium text-gray-900">Admin</div>
-                    <div class="text-sm text-gray-500">Published: 17 Januari 2024</div>
+                    <div class="font-medium text-gray-900">{{ $item->author }}</div>
+                    <div class="text-sm text-gray-500">Published: {{ \Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</div>
                 </div>
             </div>
         </div>
 
         <!-- Main Image -->
         <div class="mb-8">
-            <img src="https://placehold.co/800x400" alt="Pameran Kewirausahaan" class="w-full rounded-lg shadow-lg">
+            <img src="{{ asset('storage/'.$item->image) }}" alt="{{ $item->title }}" class="w-full rounded-lg shadow-lg">
         </div>
 
         <!-- Article Content -->
-        <div class="prose max-w-none mb-8">
-            <p class="">
-                Mahasiswa Program Studi Teknik Informatika Universitas Halu Oleo (UHO) sukses menggelar Pameran
-                Kewirausahaan di Lab Riset Dasar, Jumat (17/01/2024). Kegiatan ini merupakan bagian dari program
-                pengembangan kewirausahaan mahasiswa dengan fokus pada inovasi yang merefleksikan kearifan lokal
-                Sulawesi Tenggara (Sultra).
-            </p>
-
-            <p class="">
-                Ketua Panitia, Andri Anugrah Kustin, mengungkapkan bahwa pameran ini bertujuan untuk menyalurkan hasil
-                karya mahasiswa sebagai bukti nyata dari pembelajaran yang mereka terima selama perkuliahan. "Ini juga
-                menjadi ajang kreativitas mahasiswa dalam menciptakan produk inovatif yang dapat bersaing di pasar
-                lokal," ujarnya.
-            </p>
-
-            <h2 class="text-xl font-bold text-gray-900 mt-8 mb-4">Rincian Kegiatan:</h2>
-            <ul class="list-disc pl-6 mb-6 text-gray-700">
-                <li class="">Koleksi: Generasi mahasiswa dan inovasi karya mahasiswa</li>
-                <li class="">Ketersediaan Fasilitas: Fasilitas lengkap baik dari fasilitas fisik</li>
-                <li class="">Jenis Digital dan Games: Jadi fokus keluaran teknologi virtual memberikan pemateri di
-                    Sultra</li>
-            </ul>
-
-            <p class="">
-                "Pameran ini berlangsung mulai pukul 08.00 hingga 15.00 WITA, dan terbuka untuk umum. Dengan
-                mengutamakan teknologi inovatif yang juga mengangkat kearifan lokal, acara ini diharapkan dapat
-                mengembangkan semangat kewirausahaan di kalangan mahasiswa," tutupnya.
-            </p>
+        <div class="prose max-w-none mb-8 text-justify">
+            {!! $item->content !!}
         </div>
+        @endforeach
 
         <!-- Related Posts Section -->
         <div class="mt-12">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Artikel Terkait</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Post 1 -->
+                @foreach ($latest_article as $item)
                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="https://placehold.co/400x200" alt="Post Terkait" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Workshop Pemrograman Python</h3>
-                        <p class="text-sm text-gray-600 mb-4">Pelajari dasar-dasar pemrograman Python untuk pemula...
-                        </p>
-                        <a href="#" class="text-dark-teal font-medium hover:underline">Baca Selengkapnya →</a>
+                    <img src="{{ asset('storage/'.$item->image) }}" alt="{{ $item->title }}" class="w-full h-48 object-cover">
+                    <div class="p-4 text-justify">
+                        <h3 class="font-semibold text-lg mb-2">{{ $item->title }}</h3>
+                        <p class="text-sm text-gray-600 mb-4">{!! Str::limit($item->content, 100, '...') !!}</p>
+                        <a href="{{ route('article.detail', Crypt::encrypt($item->id)) }}" class="text-dark-teal font-medium hover:underline">Baca Selengkapnya →</a>
                     </div>
                 </div>
-
-                <!-- Post 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="https://placehold.co/400x200" alt="Post Terkait" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Seminar Cyber Security</h3>
-                        <p class="text-sm text-gray-600 mb-4">Teknik terbaru dalam menjaga keamanan sistem informasi...
-                        </p>
-                        <a href="#" class="text-dark-teal font-medium hover:underline">Baca Selengkapnya →</a>
-                    </div>
-                </div>
-
-                <!-- Post 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="https://placehold.co/400x200" alt="Post Terkait" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Pelatihan UI/UX Design</h3>
-                        <p class="text-sm text-gray-600 mb-4">Membuat desain antarmuka yang user-friendly...</p>
-                        <a href="#" class="text-dark-teal font-medium hover:underline">Baca Selengkapnya →</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
@@ -187,11 +142,8 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Comment 2 -->
-
             </div>
-        </div>
+        </div>      
     </main>
 
     <!-- Footer -->
