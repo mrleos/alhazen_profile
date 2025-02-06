@@ -1,19 +1,33 @@
-<section class="bg-gray-100 py-16 md:py-24">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Blog Terbaru</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Artikel 1 -->
-            @foreach ($article as $item)
-            
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover" src="{{ asset('storage/' .$item->image) }}" alt="Blog 1">
-                <div class="p-6 text-justify">
-                    <h3 class="text-xl font-semibold text-gray-800">{{ $item->title }}</h3>
-                    <p class="text-gray-600 mt-2">{!! Str::limit($item->content, 255, '...') !!}</p>
-                    <a href="#" class="mt-4 inline-block text-dark-teal font-semibold hover:underline">Baca Selengkapnya</a>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
+<section class="bg-gray-100 py-16">
+   <div class="container mx-auto px-4 max-w-6xl">
+       <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Blog Terbaru</h2>
+       <div class="grid md:grid-cols-3 gap-8">
+           @foreach ($article as $item)
+           <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+               <img class="w-full h-52 object-cover hover:opacity-90 transition-opacity" 
+                    src="{{ asset('storage/' .$item->image) }}" 
+                    alt="{{ $item->title }}">
+               <div class="p-6">
+                   <div class="mb-4">
+                       <h3 class="text-lg font-semibold text-gray-800 line-clamp-2 hover:text-dark-teal">
+                           {{ $item->title }}
+                       </h3>
+                       <p class="text-gray-600 mt-3 text-sm line-clamp-3">
+                           {!! Str::limit($item->content, 150, '...') !!}
+                       </p>
+                   </div>
+                   <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-100">
+                       <span class="text-sm text-gray-500">
+                           {{ \Carbon\Carbon::parse($item->created_at)->format('d M Y') }}
+                       </span>
+                       <a href="{{ route('article.detail', Crypt::encrypt($item->id)) }}" 
+                          class="text-dark-teal text-sm font-medium hover:text-primary transition-colors">
+                           Baca Selengkapnya →
+                       </a>
+                   </div>
+               </div>
+           </div>
+           @endforeach
+       </div>
+   </div>
 </section>

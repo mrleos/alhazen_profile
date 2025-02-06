@@ -27,14 +27,9 @@ class WhyAlhazenResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required()->disk('public')
-                    ->deleteUploadedFileUsing(function ($file, $record) {
-                        if ($record && $record->image) {
-                            Storage::disk('public')->delete($record->image);
-                        }
-                    }),
+                Forms\Components\Textarea::make('svg')
+                    ->columnSpanFull()
+                    ->required(),
             ]);
     }
 
@@ -44,7 +39,7 @@ class WhyAlhazenResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('svg'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
