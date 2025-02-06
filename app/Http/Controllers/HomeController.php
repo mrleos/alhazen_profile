@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Comment;
 use App\Models\Course;
 use App\Models\Footer;
 use App\Models\Galery;
@@ -33,11 +34,30 @@ class HomeController extends Controller
 
     public function detail($id)
     {
-        $footer = Footer::first()->get();
         $articleId = Crypt::decrypt($id);
+        $comments = Comment::where('article_id', $articleId)->where('status', 1)->get();
+        $footer = Footer::first()->get();
         $article = Article::find($articleId)->get();
         $latest_article = Article::latest()->take(3)->get();
-        return view('article', compact('article', 'footer', 'latest_article'));
+        return view('article', compact('article', 'footer', 'latest_article', 'comments'));
+    }
+
+    public function comment(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'comment' => 'required|string',
+        ]);
+
+        Comment::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'article_id' => $request->article_id,
+            'comment' => $request->comment,
+        ]);
+
+        return back()->with('success', 'Komentar berhasil dikirim!');
     }
 
     /**
