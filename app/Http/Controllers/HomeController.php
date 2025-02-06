@@ -9,6 +9,7 @@ use App\Models\Galery;
 use App\Models\Hero;
 use App\Models\Testimoni;
 use App\Models\Tutor;
+use App\Models\WhyAlhazen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 
@@ -19,14 +20,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
+        $whyAlhazen = WhyAlhazen::latest()->take(6)->get();
+        $courses = Course::latest()->take(6)->get();
         $article = Article::latest()->take(3)->get();
         $testimonis = Testimoni::latest()->take(2)->get();
         $tutors = Tutor::all();
         $galleries = Galery::latest()->get();
         $footer = Footer::first()->get();
         $hero = Hero::first()->get();
-        return view('home', compact('hero', 'footer', 'galleries', 'tutors', 'testimonis', 'article', 'courses'));
+        return view('home', compact('hero', 'footer', 'galleries', 'tutors', 'testimonis', 'article', 'courses', 'whyAlhazen'));
     }
 
     public function detail($id)

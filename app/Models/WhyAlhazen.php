@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class WhyAlhazen extends Model
 {
     protected $table = 'why_alhazens';
-    protected $fillable = ['title', 'image'];
+    protected $fillable = ['title', 'svg'];
 }

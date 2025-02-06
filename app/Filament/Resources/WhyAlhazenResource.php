@@ -39,7 +39,7 @@ class WhyAlhazenResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('image'),
+                Tables\Columns\TextColumn::make('svg'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
