@@ -11,3 +11,4 @@ Route::get('/', function () {
 
 Route::get('Home/', [HomeController::class, 'index'])->name('home.index');
 Route::get('Detail/{id}', [HomeController::class, 'detail'])->name('article.detail');
+Route::post('Comment', [HomeController::class, 'comment'])->name('comment.post');

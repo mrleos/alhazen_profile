@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teknik Informatika UHO</title>
+    @foreach ($article as $item)
+    <title>{{ $item->title }}</title>
+    @endforeach
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -103,29 +105,33 @@
         <!-- Comments -->
         <div class="mt-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-8">Komentar</h2>
-            <form id="formKomentar" class="mb-12">
+            <form id="formKomentar" class="mb-12" action="{{ route('comment.post') }}" method="POST">
+                @csrf
+                @foreach ($article as $item)
+                <input type="hidden" name="article_id" value="{{ $item->id }}">
+                @endforeach
                 <div class="bg-white rounded-xl shadow-md p-8">
                     <textarea
                         class="w-full px-4 py-3 text-gray-700 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                        rows="4" placeholder="Tulis komentar Anda..."></textarea>
+                        rows="4" placeholder="Tulis komentar Anda..." id="comment" name="comment"></textarea>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                         <div>
                             <label class="block text-gray-700 font-medium mb-2" for="name">Nama *</label>
-                            <input type="text" id="name"
+                            <input type="text" id="name" name="name"
                                 class="w-full px-4 py-2 text-gray-700 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                                 placeholder="Nama Anda">
                         </div>
                         <div>
                             <label class="block text-gray-700 font-medium mb-2" for="email">Email *</label>
-                            <input type="email" id="email"
+                            <input type="email" id="email" name="email"
                                 class="w-full px-4 py-2 text-gray-700 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                                 placeholder="Email Anda">
                         </div>
                     </div>
 
                     <div class="flex justify-end mt-6">
-                        <button
+                        <button type="submit"
                             class="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                             Kirim Komentar
                         </button>
@@ -135,19 +141,22 @@
 
             <!-- Comment List -->
             <div class="space-y-6">
+                @foreach ($comments as $item)
+                
                 <div class="bg-white rounded-xl shadow-md p-6">
                     <div class="flex items-start space-x-4">
                         <img src="https://placehold.co/40x40" alt="User" class="w-12 h-12 rounded-full">
                         <div class="flex-1">
                             <div class="flex items-center justify-between mb-2">
-                                <h3 class="font-semibold text-gray-900">Username</h3>
-                                <span class="text-sm text-gray-500">2 jam yang lalu</span>
+                                <h3 class="font-semibold text-gray-900">{{ $item->name }}</h3>
+                                <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</span>
                             </div>
-                            <p class="text-gray-700 leading-relaxed">Lorem ipsum dolor, sit amet consectetur adipisicing
-                                elit.</p>
+                            <p class="text-gray-700 leading-relaxed">{{ $item->comment }}</p>
                         </div>
                     </div>
                 </div>
+
+                @endforeach
             </div>
         </div>
     </main>
@@ -161,7 +170,6 @@
         const commentForm = document.getElementById('formKomentar');
         if (commentForm) {
             commentForm.addEventListener('submit', function (e) {
-                e.preventDefault();
                 Swal.fire({
                     title: 'Komentar Dalam Peninjauan',
                     text: 'Komentar Anda sedang menunggu persetujuan dari admin untuk memastikan kualitas diskusi.',
