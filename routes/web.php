@@ -10,5 +10,4 @@ Route::get('/', function () {
 });
 
 Route::get('Home/', [HomeController::class, 'index'])->name('home.index');
-
-Route::get('article', [ArticleController::class, 'show'])->name('article.show');
+Route::get('Detail/{id}', [HomeController::class, 'detail'])->name('article.detail');

@@ -24,7 +24,7 @@
                     Kami</a>
                 <a href="#kelas" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Kelas</a>
                 <a href="#gallery" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Galeri</a>
-                <a href="#testimoni" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">testimoni </a>
+                <a href="#testimoni" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Testimoni </a>
             </div>
 
             <!-- Mobile Menu Button (you can add functionality later) -->
