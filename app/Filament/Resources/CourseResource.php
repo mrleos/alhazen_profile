@@ -29,8 +29,7 @@ class CourseResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
-                    ->required()
-                    ->columnSpanFull(),
+                    ->required(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->imageEditor()
@@ -40,7 +39,27 @@ class CourseResource extends Resource
                             Storage::disk('public')->delete($record->image);
                         }
                     })
+
                     ->required(),
+                Forms\Components\RichEditor::make('detail_page')
+                    ->label('Detail')
+                    ->toolbarButtons([
+                        'attachFiles',
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'heading',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'table',
+                        'undo',
+                    ])
+                    ->columnSpanFull()
+                    ->required()
             ]);
     }
 
