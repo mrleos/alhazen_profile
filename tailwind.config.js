@@ -11,13 +11,14 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Montserrat', ...defaultTheme.fontFamily.sans], 
             },
             colors: {
                 primary: '#ED8A38',       // Warna primer oranye
                 'primary-light': '#C6EECC', // Warna primer kedua
                 secondary: '#FDE703',     // Warna sekunder kuning
                 'dark-teal': '#29585B',   // Warna sekunder teal gelap
+                'light-teal': '#8FD8DE',  // Warna sekunder teal terang
             },
         },
     },
