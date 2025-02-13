@@ -6,6 +6,13 @@ html {
     scroll-behavior: smooth;
 }
 
+@layer base {
+    body {
+        @apply font-sans;
+    }
+}
+
+
 
 /* About Section*/
 @media (prefers-reduced-motion: reduce) {

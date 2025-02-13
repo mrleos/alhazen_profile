@@ -6,7 +6,7 @@
             <h3 class="text-lg font-semibold text-primary">OUR GALLERY</h3>
         </div>
         <div class="mb-12 text-center">
-            <h2 class="text-3xl font-bold text-dark-teal md:text-4xl">Galeri Pembelajaran Alhazen Academy</h2>
+            <h2 class="text-3xl font-bold text-dark-teal md:text-4xl">Galeri Pembelajaran Alhazen Kendari</h2>
         </div>
 
         <!-- Gallery Grid -->

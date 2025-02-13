@@ -2,7 +2,7 @@
     <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="mb-12 text-center">
-            <h2 class="text-3xl font-bold text-dark-teal md:text-4xl">Testimoni</h2>
+            <h2 class="text-3xl font-bold text-dark-teal md:text-4xl">Testimoni Dari Murid di Kendari</h2>
         </div>
 
         <!-- Testimonial Content -->
