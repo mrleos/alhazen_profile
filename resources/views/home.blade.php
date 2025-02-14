@@ -46,43 +46,20 @@
         <div class="relative mb-16 overflow-hidden">
             <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
                 <!-- Banner 1 -->
+                @foreach ($courses as $course)
                 <div class="min-w-full flex-none snap-center px-4">
                     <div class="relative overflow-hidden rounded-2xl bg-white shadow-lg">
-                        <img src="/image/banner1.jpg" alt="Kelas Koding Gratis"
+                        <img src="{{ asset('storage/' . $course->image) }}" alt="Kelas Koding Gratis"
                             class="h-[200px] w-full object-cover sm:h-[300px] md:h-[400px]">
                         <div class="absolute inset-0 flex items-center justify-center bg-black/30 p-6 text-center">
                             <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                                Kelas Koding Gratis
+                                {{ $course->title }}
                             </h2>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <!-- Banner 2 -->
-                <div class="min-w-full flex-none snap-center px-4">
-                    <div class="relative overflow-hidden rounded-2xl bg-white shadow-lg">
-                        <img src="/image/banner2.jpg" alt="Belajar Roblox"
-                            class="h-[200px] w-full object-cover sm:h-[300px] md:h-[400px]">
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/30 p-6 text-center">
-                            <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                                Belajar Roblox
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Banner 3 -->
-                <div class="min-w-full flex-none snap-center px-4">
-                    <div class="relative overflow-hidden rounded-2xl bg-white shadow-lg">
-                        <img src="/image/banner3.jpg" alt="Game Development"
-                            class="h-[200px] w-full object-cover sm:h-[300px] md:h-[400px]">
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/30 p-6 text-center">
-                            <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                                Game Development
-                            </h2>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Navigation Buttons -->
