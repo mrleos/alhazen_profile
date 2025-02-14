@@ -1,7 +1,7 @@
-<section class="tutor-section bg-primary-light py-16">
+<section id="tutor" class="tutor-section bg-primary-light py-16">
   <div class="container mx-auto text-center px-4">
-    <h2 class="text-4xl text-dark-teal font-bold mb-4">Belajar Bersama Tutor 
-      <span class="text-primary bg-primary bg-clip-text text-transparent">EXPERT</span>
+    <h2 class="text-4xl text-dark-teal font-bold mb-4">Belajar Bersama Tutor expert di 
+      <span class="text-primary bg-primary bg-clip-text text-transparent">Kendari</span>
     </h2>
     <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Tingkatkan kemampuanmu bersama para tutor professional kami</p>
     
