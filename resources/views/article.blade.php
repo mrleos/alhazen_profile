@@ -13,32 +13,7 @@
 
 <body class="bg-gray-50">
     <!-- Navbar -->
-    <nav class="fixed inset-x-0 top-0 z-50 bg-white shadow-md">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 md:px-8 lg:px-12">
-            <a href="/">
-                <img src="/image/logo.png" alt="Logo Alhazen Academy" class="h-8 sm:h-10">
-            </a>
-
-            <!-- Navigation Links -->
-            <div class="hidden md:flex md:gap-6 lg:gap-8">
-                <a href="/Home#home" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Home</a>
-                <a href="/Home#tentang" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Tentang
-                    Kami</a>
-                <a href="/Home#kelas" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Kelas</a>
-                <a href="/Home#gallery"
-                    class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Galeri</a>
-                <a href="/Home#testimoni"
-                    class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Testimoni </a>
-            </div>
-
-            <!-- Mobile Menu Button (you can add functionality later) -->
-            <button class="p-2 md:hidden">
-                <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
-    </nav>
+    @include('.navbar')
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto mt-24 px-4 py-8"> <!-- Increased mt for navbar -->
         @foreach ($article as $item)
@@ -50,7 +25,6 @@
 
                 <!-- Author and Date -->
                 <div class="flex items-center space-x-5 mb-8">
-                    <img src="https://placehold.co/50x50" alt="Author" class="w-14 h-14 rounded-full shadow-sm">
                     <div>
                         <div class="font-medium text-gray-900 text-lg">{{ $item->author }}</div>
                         <div class="text-gray-500">{{ \Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</div>

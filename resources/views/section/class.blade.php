@@ -20,7 +20,7 @@
       <!-- Kelas 1 -->
       @foreach ($courses as $course)
         <div class="group max-w-xs mx-auto">
-          <div class="relative rounded-2xl overflow-hidden bg-white shadow-lg transition duration-300 hover:shadow-xl">
+          <div class=" w-96 rounded-2xl overflow-hidden bg-white shadow-lg transition duration-300 hover:shadow-xl">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-hijau-500 to-yellow-500"></div>
 
             <div class="p-6 text-center">
@@ -29,15 +29,15 @@
                   class="w-16 h-16 bg-purple-50 rounded-full">
               </div>
 
-              <h3 class="text-xl font-semibold text-dark-teal mb-3">{{ $course->title }}</h3>
+              <h3 class=" first-letter:uppercase text-xl font-semibold text-dark-teal mb-3">{{ $course->title }}</h3>
 
-              <p class="text-gray-600 mb-4 text-sm">
+              <p class="text-gray-600 mb-4 text-base">
                 {{ Str::limit($course->description, 150, '...') }}
               </p>
 
               <button
                 class="mt-6 w-full bg-dark-teal text-white py-3 rounded-xl transition duration-300 hover:bg-dark-teal/90 focus:outline-none focus:ring-2 focus:ring-hijau-500 focus:ring-offset-2">
-                Pilih Kelas
+                Detail Kelas
               </button>
             </div>
           </div>
