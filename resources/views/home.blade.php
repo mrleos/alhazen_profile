@@ -11,33 +11,78 @@
 
 <body class="font-sans">
     <!-- Navbar -->
-    <nav class="fixed inset-x-0 top-0 z-50 bg-white shadow-md">
+   <nav class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 md:px-8 lg:px-12">
-            <a href="/">
-                <img src="/image/logo.png" alt="Logo Alhazen Academy" class="h-8 sm:h-10">
-            </a>
-
-            <!-- Navigation Links -->
-            <div class="hidden md:flex md:gap-6 lg:gap-8">
-                <a href="#home" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Home</a>
-                <a href="#tentang" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Tentang
-                    Kami</a>
-                <a href="#kelas" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Kelas</a>
-                <a href="#gallery" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Galeri</a>
-                <a href="#testimoni" class="text-sm text-gray-600 transition hover:text-primary lg:text-base">Testimoni
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="/" class="transition hover:opacity-80">
+                    <img src="/image/logo.png" alt="Logo Alhazen Academy" class="h-8 sm:h-10">
                 </a>
             </div>
 
-            <!-- Mobile Menu Button (you can add functionality later) -->
-            <button class="p-2 md:hidden">
-                <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+            <!-- Navigation Links - Centered -->
+            <d iv class="hidden md:flex md:absolute md:left-1/2 md:-translate-x-1/2 md:gap-8 lg:gap-10">
+                <a href="#home"
+                    class="group relative text-sm font-medium text-dark-teal/90 transition-colors hover:text-dark-teal lg:text-base">
+                    Home
+                    <span
+                        class="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#tentang"
+                    class="group relative text-sm font-medium text-dark-teal/90 transition-colors hover:text-dark-teal lg:text-base">
+                    Tentang Kami
+                    <span
+                        class="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#kelas"
+                    class="group relative text-sm font-medium text-dark-teal/90 transition-colors hover:text-dark-teal lg:text-base">
+                    Kelas
+                    <span
+                        class="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#gallery"
+                    class="group relative text-sm font-medium text-dark-teal/90 transition-colors hover:text-dark-teal lg:text-base">
+                    Galeri
+                    <span
+                        class="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#tutor"
+                    class="group relative text-sm font-medium text-dark-teal/90 transition-colors hover:text-dark-teal lg:text-base">
+                    Mentor
+                    <span
+                        class="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#testimoni"
+                    class="group relative text-sm font-medium text-dark-teal/90 transition-colors hover:text-dark-teal lg:text-base">
+                    Testimoni
+                    <span
+                        class="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </d>
+
+            <!-- Right Section: Button and Mobile Menu -->
+            <div class="flex items-center gap-6">
+                <!-- Button (hidden on mobile) -->
+                <a href="/info-ppdb"
+                    class="hidden md:inline-flex items-center justify-center rounded-full bg-dark-teal px-6 py-2.5 text-sm font-normal text-white transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_8px_30px_rgb(237,138,56,0.3)] lg:text-base">
+                    <span class="relative">
+                        Info PPDB 
+                    </span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="relative group p-2 text-white transition-colors hover:text-primary md:hidden">
+                    <div
+                        class="absolute inset-0 -z-10 rounded-lg bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    </div>
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
     </nav>
-
-
     <!-- Hero Section -->
     <section id="home" class="bg-primary-light py-24 relative min-h-screen">
     <!-- Container untuk konten -->
@@ -62,77 +107,70 @@
 
             </div>
 
-            <!-- Navigation Buttons -->
-            <button
-                class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg transition hover:bg-white"
-                onclick="this.parentElement.querySelector('.snap-x').scrollBy({left: -window.innerWidth, behavior: 'smooth'})">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-            </button>
+                <!-- Navigation Buttons -->
+                <button
+                    class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg transition hover:bg-white"
+                    onclick="this.parentElement.querySelector('.snap-x').scrollBy({left: -window.innerWidth, behavior: 'smooth'})">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
 
-            <button
-                class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg transition hover:bg-white"
-                onclick="this.parentElement.querySelector('.snap-x').scrollBy({left: window.innerWidth, behavior: 'smooth'})">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-            </button>
+                <button
+                    class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg transition hover:bg-white"
+                    onclick="this.parentElement.querySelector('.snap-x').scrollBy({left: window.innerWidth, behavior: 'smooth'})">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
 
-            <!-- Dots indicator -->
-            <div class="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
-                <button class="h-2 w-2 rounded-full bg-white/60 transition hover:bg-white"
-                    onclick="this.parentElement.parentElement.querySelector('.snap-x').scrollTo({left: 0, behavior: 'smooth'})">
-                </button>
-                <button class="h-2 w-2 rounded-full bg-white/60 transition hover:bg-white"
-                    onclick="this.parentElement.parentElement.querySelector('.snap-x').scrollTo({left: window.innerWidth, behavior: 'smooth'})">
-                </button>
-                <button class="h-2 w-2 rounded-full bg-white/60 transition hover:bg-white"
-                    onclick="this.parentElement.parentElement.querySelector('.snap-x').scrollTo({left: window.innerWidth * 2, behavior: 'smooth'})">
-                </button>
+                <!-- Dots indicator -->
+                <div class="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                    <button class="h-2 w-2 rounded-full bg-white/60 transition hover:bg-white"
+                        onclick="this.parentElement.parentElement.querySelector('.snap-x').scrollTo({left: 0, behavior: 'smooth'})">
+                    </button>
+                    <button class="h-2 w-2 rounded-full bg-white/60 transition hover:bg-white"
+                        onclick="this.parentElement.parentElement.querySelector('.snap-x').scrollTo({left: window.innerWidth, behavior: 'smooth'})">
+                    </button>
+                    <button class="h-2 w-2 rounded-full bg-white/60 transition hover:bg-white"
+                        onclick="this.parentElement.parentElement.querySelector('.snap-x').scrollTo({left: window.innerWidth * 2, behavior: 'smooth'})">
+                    </button>
+                </div>
             </div>
+
+            <!-- Hero Content -->
+            @foreach ($hero as $item)
+                <div class="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
+                    <!-- Left Content -->
+                    <div class="text-center md:text-left">
+                        <h1 class="mb-4 text-4xl font-extrabold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                            {{ $item->title }}
+                        </h1>
+                        <p class="mb-6 text-lg text-dark-teal opacity-90 sm:text-xl md:mb-8 md:text-2xl">
+                            {{ $item->content }}
+                        </p>
+                        <a href="#kelas"
+                            class="inline-block rounded-full bg-yellow-400 px-6 py-3 text-lg font-semibold text-dark-teal shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white hover:text-yellow-500">
+                            🚀 Mulai Belajar Sekarang!
+                        </a>
+                    </div>
+
+                    <!-- Right Content - Cartoon Illustration -->
+                    <div class="relative">
+                        <img src="{{ asset('storage/' . $item->image) }}" alt="Student Learning"
+                            class="h-auto w-full max-w-md transition-all sm:max-w-lg md:max-w-none">
+                    </div>
+                </div>
+            @endforeach
         </div>
 
-        <!-- Hero Content -->
-        @foreach ($hero as $item)
-            <div class="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
-                <!-- Left Content -->
-                <div class="text-center md:text-left">
-                    <h1 class="mb-4 text-4xl font-extrabold text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                        {{ $item->title }}
-                    </h1>
-                    <p class="mb-6 text-lg text-dark-teal opacity-90 sm:text-xl md:mb-8 md:text-2xl">
-                        {{ $item->content }}
-                    </p>
-                    <a href="#kelas"
-                        class="inline-block rounded-full bg-yellow-400 px-6 py-3 text-lg font-semibold text-dark-teal shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white hover:text-yellow-500">
-                        🚀 Mulai Belajar Sekarang!
-                    </a>
-                </div>
-
-                <!-- Right Content - Cartoon Illustration -->
-                <div class="relative">
-                    <img src="{{ asset('storage/' . $item->image) }}" alt="Student Learning"
-                        class="h-auto w-full max-w-md transition-all sm:max-w-lg md:max-w-none">
-                    <!-- Floating Decorations -->
-                    <div class="absolute -top-4 left-10 animate-bounce">
-                        🌟
-                    </div>
-                    <div class="absolute bottom-4 right-6 animate-spin">
-                        ✨
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
-
-    <!-- Divider (Clouds) -->
-    <div class="absolute bottom-0 left-0 right-0 h-16 overflow-hidden sm:h-20 md:h-24">
-        <!-- First cloud layer -->
-        <svg class="absolute bottom-2 left-0 w-full transform sm:bottom-3 md:bottom-4"
-            xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" viewBox="0 0 100 100"
-            preserveAspectRatio="none">
-            <path fill="#fff" opacity="0.5" d="M-5 100 Q 0 20 5 100 Z
+        <!-- Divider (Clouds) -->
+        <div class="absolute bottom-0 left-0 right-0 h-16 overflow-hidden sm:h-20 md:h-24">
+            <!-- First cloud layer -->
+            <svg class="absolute bottom-2 left-0 w-full transform sm:bottom-3 md:bottom-4"
+                xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" viewBox="0 0 100 100"
+                preserveAspectRatio="none">
+                <path fill="#fff" opacity="0.5" d="M-5 100 Q 0 20 5 100 Z
                          M0 100 Q 5 0 10 100
                          M5 100 Q 10 30 15 100
                          M10 100 Q 15 10 20 100
@@ -153,13 +191,13 @@
                          M85 100 Q 90 50 95 100
                          M90 100 Q 95 25 100 100
                          M95 100 Q 100 15 105 100 Z">
-            </path>
-        </svg>
+                </path>
+            </svg>
 
-        <!-- Second cloud layer -->
-        <svg class="absolute bottom-0 left-0 w-full" xmlns="http://www.w3.org/2000/svg" version="1.1" height="100"
-            viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path fill="#fff" d="M-5 100 Q 0 20 5 100 Z
+            <!-- Second cloud layer -->
+            <svg class="absolute bottom-0 left-0 w-full" xmlns="http://www.w3.org/2000/svg" version="1.1" height="100"
+                viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path fill="#fff" d="M-5 100 Q 0 20 5 100 Z
                          M0 100 Q 5 0 10 100
                          M5 100 Q 10 30 15 100
                          M10 100 Q 15 10 20 100
@@ -180,10 +218,10 @@
                          M85 100 Q 90 50 95 100
                          M90 100 Q 95 25 100 100
                          M95 100 Q 100 15 105 100 Z">
-            </path>
-        </svg>
-    </div>
-</section>
+                </path>
+            </svg>
+        </div>
+    </section>
 
 
     <div class="fixed bottom-10 right-8 z-50 flex items-center sm:bottom-14 sm:right-12">
