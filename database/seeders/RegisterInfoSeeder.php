@@ -17,7 +17,7 @@ class RegisterInfoSeeder extends Seeder
         Register::create([
             'image' => '01JK8MGS7FT20MZCW0F34CGD42.png',
             'deskripsi' => 'Penerimaan Peserta Didik Baru (PPDB) 2025 telah dibuka! Simak timeline berikut untuk mengetahui tahapan dan jadwal penting.',
-            'persyaratan' => [['Persyaratan' => 'Punya laptop'], ['Persyaratan' => 'Berkemauan tinggi']],
+            'persyaratan' => [['persyaratan' => 'Punya laptop'], ['persyaratan' => 'Berkemauan tinggi']],
             // 'timeline' => '01JK8MGS7FT20MZCW0F34CGD42.png',
             'created_at' => '2025-02-04 14:06:10',
             'updated_at' => '2025-02-04 14:06:10',

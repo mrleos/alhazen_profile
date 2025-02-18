@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Register extends Model
 {
     protected $table = 'registers';
-    protected $guarded = ['id'];
+    protected $fillable = ['image', 'persyaratan', 'deskripsi'];
     protected $casts = [
         'persyaratan' => 'json',
     ];
