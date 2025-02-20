@@ -55,10 +55,9 @@
       </div>
     </div>
   </main>
-                {{-- @dd($footer) --}}
 
   <!-- Footer -->
-  @include('.footer')
+  {{-- @include('.footer') --}}
 </body>
 
 </html>

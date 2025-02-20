@@ -12,8 +12,7 @@ Route::get('/', function () {
 
 Route::get('Home/', [HomeController::class, 'index'])->name('home.index');
 Route::get('Detail/{id}', [HomeController::class, 'detail'])->name('article.detail');
+Route::get('Detail-Kelas/{id}', [HomeController::class, 'detailKelas'])->name('course.detail');
 Route::post('Comment', [HomeController::class, 'comment'])->name('comment.post');
 
 Route::get('info-ppdb',[PendaftaranController::class,'index'])->name('ppdb');
-
-Route::get('detail-kelas/{id}', [HomeController::class, 'detailKelas'])->name('class.detail');
