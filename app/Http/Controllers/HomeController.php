@@ -42,6 +42,13 @@ class HomeController extends Controller
         return view('article', compact('article', 'footer', 'latest_article', 'comments'));
     }
 
+    public function detailKelas($id)
+    {
+        $latestCourse = Course::latest()->take(3)->get();
+        $detail = Course::find($id);
+        return view('detailKelas', compact(['detail', 'latestCourse']));
+    }
+
     public function comment(Request $request)
     {
         $request->validate([
