@@ -42,7 +42,7 @@ class ArticleResource extends Resource
                     }),
                 Forms\Components\RichEditor::make('content')
                     ->toolbarButtons([
-                        // 'attachFiles',
+                        'attachFiles',
                         'blockquote',
                         'bold',
                         'bulletList',
