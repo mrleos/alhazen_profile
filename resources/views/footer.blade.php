@@ -2,7 +2,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 @foreach ($footer as $item)
-                    
+
                 <!-- Logo dan Deskripsi -->
                 <div class="md:col-span-2">
                     <a href="/" class="mb-6 inline-block">
@@ -14,12 +14,12 @@
                     <!-- Google Maps -->
                     <div class="mt-6 max-w-md">
                         <div class="aspect-video relative rounded-lg overflow-hidden">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.1625366056073!2d122.50521477586972!3d-3.9869653445439703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d98f300543174e1%3A0x9dd823074f6b5ed8!2sAlhazen%20School%20Kendari!5e0!3m2!1sid!2sid!4v1739009290395!5m2!1sid!2sid" 
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.1625366056073!2d122.50521477586972!3d-3.9869653445439703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d98f300543174e1%3A0x9dd823074f6b5ed8!2sAlhazen%20School%20Kendari!5e0!3m2!1sid!2sid!4v1739009290395!5m2!1sid!2sid"
                                 class="absolute inset-0 w-full h-full"
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>

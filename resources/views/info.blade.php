@@ -18,63 +18,47 @@
     <!-- Header -->
     <div class="text-center mb-12">
       <h1 class="text-4xl font-bold text-gray-900 relative inline-block">
-        Info PPDB 2025
+        Info PPDB
         <span class="block h-1 bg-dark-teal w-24 mx-auto mt-2"></span>
       </h1>
     </div>
-
     <!-- Banner -->
     <div class="mb-12 flex justify-center">
-      <img src="/image/ppdb_banner.jpg" alt="PPDB 2025"
+      <img src="{{ asset('storage/'.$pendaftaran->image) }}" alt="PPDB 2025"
         class="w-full max-w-4xl h-[450px] object-cover rounded-2xl shadow-lg transition-transform duration-300">
     </div>
 
     <!-- Description -->
     <div class="prose max-w-none text-center text-lg text-gray-700 leading-relaxed">
-      <p>Penerimaan Peserta Didik Baru (PPDB) 2025 telah dibuka! Simak timeline berikut untuk mengetahui tahapan dan
-        jadwal penting.</p>
+      <p>{{ $pendaftaran->deskripsi }}</p>
     </div>
 
     <!-- Timeline Pendaftaran -->
     <div class="mt-16">
-      <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Timeline Pendaftaran</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Persyaratan Pendaftaran</h2>
       <div class="overflow-hidden rounded-xl shadow-lg">
         <table class="min-w-full bg-white">
           <thead>
             <tr class="bg-dark-teal text-white">
-              <th class="py-4 px-6 text-left text-lg font-semibold">Tahapan</th>
-              <th class="py-4 px-6 text-left text-lg font-semibold">Tanggal</th>
+              <th class="py-4 px-6 text-center text-lg font-semibold">Peryaratan</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-300">
+            @foreach ($pendaftaran->persyaratan as $syarat)
             <tr class="hover:bg-primary-light/30 transition">
-              <td class="py-4 px-6">Pembukaan Pendaftaran</td>
-              <td class="py-4 px-6">1 Maret 2025</td>
+              <td class="py-4 px-6">{{ $syarat['persyaratan'] }}</td>
             </tr>
-            <tr class="hover:bg-primary-light/30 transition">
-              <td class="py-4 px-6">Seleksi Administrasi</td>
-              <td class="py-4 px-6">5 - 10 Maret 2025</td>
-            </tr>
-            <tr class="hover:bg-primary-light/30 transition">
-              <td class="py-4 px-6">Tes Seleksi</td>
-              <td class="py-4 px-6">15 Maret 2025</td>
-            </tr>
-            <tr class="hover:bg-primary-light/30 transition">
-              <td class="py-4 px-6">Pengumuman Hasil</td>
-              <td class="py-4 px-6">20 Maret 2025</td>
-            </tr>
-            <tr class="hover:bg-primary-light/30 transition">
-              <td class="py-4 px-6">Daftar Ulang</td>
-              <td class="py-4 px-6">25 - 30 Maret 2025</td>
-            </tr>
+            @endforeach
+
           </tbody>
         </table>
       </div>
     </div>
   </main>
+                {{-- @dd($footer) --}}
 
   <!-- Footer -->
-  {{-- @include('.footer') --}}
+  @include('.footer')
 </body>
 
 </html>

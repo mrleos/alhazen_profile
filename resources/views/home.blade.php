@@ -63,10 +63,10 @@
             <!-- Right Section: Button and Mobile Menu -->
             <div class="flex items-center gap-6">
                 <!-- Button (hidden on mobile) -->
-                <a href="/info-ppdb"
+                <a href="{{ route('ppdb') }}"
                     class="hidden md:inline-flex items-center justify-center rounded-full bg-dark-teal px-6 py-2.5 text-sm font-normal text-white transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_8px_30px_rgb(237,138,56,0.3)] lg:text-base">
                     <span class="relative">
-                        Info PPDB 
+                        Info PPDB
                     </span>
                 </a>
 
@@ -103,9 +103,6 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
-
-            </div>
 
                 <!-- Navigation Buttons -->
                 <button
