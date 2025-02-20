@@ -35,10 +35,10 @@
                 {{ Str::limit($course->description, 150, '...') }}
               </p>
 
-              <a href="{{ route('class.detail',Crypt::encrypt($course->id)) }}"
+              <button
                 class="mt-6 w-full bg-dark-teal text-white py-3 rounded-xl transition duration-300 hover:bg-dark-teal/90 focus:outline-none focus:ring-2 focus:ring-hijau-500 focus:ring-offset-2">
                 Detail Kelas
-              </a>
+              </button>
             </div>
           </div>
         </div>
