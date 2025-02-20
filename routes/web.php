@@ -15,3 +15,5 @@ Route::get('Detail/{id}', [HomeController::class, 'detail'])->name('article.deta
 Route::post('Comment', [HomeController::class, 'comment'])->name('comment.post');
 
 Route::get('info-ppdb',[PendaftaranController::class,'index'])->name('ppdb');
+
+Route::get('detail-kelas/{id}', [HomeController::class, 'detailKelas'])->name('class.detail');
